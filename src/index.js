@@ -1,3 +1,4 @@
-const { rollDice } = require("./diceRolling")
+const { rollDice, rollDiceWithAdvantage } = require("./diceRolling")
 
 console.log(rollDice());
+console.log(rollDiceWithAdvantage());
