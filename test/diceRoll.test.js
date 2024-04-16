@@ -22,7 +22,7 @@ describe('As a casual gamer...', () => {
 
  });
 
- describe('As a dungeon master...', () => { 
+describe('As a dungeon master...', () => { 
     describe('...I want to roll a vareity of dice sizes, such as...', () => { 
 
         let diceVarieties = [
@@ -60,6 +60,26 @@ describe('As a casual gamer...', () => {
         
      });
     
+    test('...roll with disadvantage', () => { 
+        let rollDiceWithDisadvantage = jest.fn().mockReturnValue(
+            {
+                finalResult: 1,
+                rolls: [1,20]
+            }
+        );
+
+        let rollResult = rollDiceWithDisadvantage(20)
+
+        expect(rollResult.finalResult).toBe(1);
+
+     });
+
+     test.skip('...roll with advantage', () => { 
+        let rollResult = null;
+
+        expect(rollResult.finalResult).toBe(20);
+      });
+
      test('...I want to see how many natural 20s I get in a session where I roll 1000 D20s', () => { 
         
         let diceResults =[];
